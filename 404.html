@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bob Rohrman Hyundai Service Dashboard</title>
+  <script>
+    // Anything that lands on rohrmanhyundai.github.io with a missing or
+    // wrong-case path (iPhone keyboards type URLs lowercase, and GitHub Pages
+    // paths are case-sensitive) gets forwarded to the real dashboard, keeping
+    // any sub-path the user meant to reach.
+    (function () {
+      var DEST = 'https://rohrmanhyundai.github.io/Rohrmanhyundai/';
+      var p = window.location.pathname.replace(/^\/+/, '');
+      if (/^rohrmanhyundai\/?/i.test(p)) p = p.replace(/^rohrmanhyundai\/?/i, '');
+      window.location.replace(DEST + p + window.location.search + window.location.hash);
+    })();
+  </script>
+  <meta http-equiv="refresh" content="1; url=https://rohrmanhyundai.github.io/Rohrmanhyundai/" />
+  <style>
+    body { background:#0d1627; color:#e2e8f0; font-family:Inter,-apple-system,system-ui,sans-serif;
+           display:flex; align-items:center; justify-content:center; height:100vh; margin:0; text-align:center; }
+    a { color:#4fc3f7; }
+  </style>
+</head>
+<body>
+  <p>Opening the dashboard&hellip;<br />
+     <a href="https://rohrmanhyundai.github.io/Rohrmanhyundai/">Tap here if it doesn't load.</a></p>
+</body>
+</html>
