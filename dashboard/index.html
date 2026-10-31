@@ -3,20 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <title>Bob Rohrman Hyundai — Shop Dashboard</title>
-  <!--
-    Short address for the shop TV: rohrmanhyundai.github.io/dashboard
-    Shows the real TV dashboard (/Rohrmanhyundai/dashboard/) full-screen, so
-    the address bar stays short and the TV never gets a "not found" page.
-    Same site, so the dashboard behaves exactly as if opened directly.
-  -->
-  <style>
-    html, body { margin:0; height:100%; overflow:hidden; background:#0d1627; }
-    iframe { position:fixed; inset:0; width:100%; height:100%; border:0; display:block; }
-  </style>
+  <title>Bob Rohrman Hyundai — moved</title>
+  <script>
+    // The dashboard moved to https://lafhyundaishop.com on 2026-10-31.
+    // Any address on rohrmanhyundai.github.io — the short /dashboard, the old
+    // /Rohrmanhyundai/... links (any capitalization), ?reset= links, #screens —
+    // goes to the same page there. A full-page redirect, not a frame: the new
+    // site refuses to be framed (security headers).
+    (function () {
+      var rest = window.location.pathname.replace(/^\/+/, '').replace(/^rohrmanhyundai\/?/i, '');
+      var first = rest.split('/')[0].toLowerCase().replace(/\.html?$/, '');
+      var path = { dashboard: 'dashboard/', sales: 'sales/', mobile: 'mobile/' }[first] || '';
+      window.location.replace('https://lafhyundaishop.com/' + path + window.location.search + window.location.hash);
+    })();
+  </script>
+  <meta http-equiv="refresh" content="2; url=https://lafhyundaishop.com/" />
+  <style>body{background:#0d1627;color:#e2e8f0;font-family:-apple-system,system-ui,sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;text-align:center;font-size:22px}a{color:#4fc3f7}</style>
 </head>
-<body>
-  <iframe src="/Rohrmanhyundai/dashboard/" title="Shop Dashboard" allow="fullscreen" allowfullscreen></iframe>
-</body>
+<body><p>The dashboard has moved to<br /><a href="https://lafhyundaishop.com/">lafhyundaishop.com</a></p></body>
 </html>
